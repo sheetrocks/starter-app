@@ -26,4 +26,4 @@ $ mv .example.env .env && mv api/example.env.ts api/env.ts
 ```bash
 $ node build && npm run deploy.js
 ```
-8. Visit `https://sheet.rocks/apps/{your workbook ID}/index.html`, you should should be redirected to your login page. After you log in, you'll see the text "Congratulations! You've gotten started with SheetRocks." If you used a custom domain, go to https://yourdomain.com to view your new app. Note that, even for custom domains, the SheetRocks platform handles TLS (https) security.
+8. Visit `https://sheet.rocks/apps/{your workbook ID}/index.html`, you should should be redirected to your login page. After you log in, you'll see the text "Congratulations! You've gotten started with SheetRocks." If you used a custom domain, go to `https://yourdomain.com` to view your new app. Note that, even for custom domains, the SheetRocks platform handles TLS (https) security.
