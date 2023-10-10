@@ -43,7 +43,7 @@ export class App extends Component<AppProps, AppState> {
     // if token is not in localstorage, redirect to login page
 
     if(!token) {
-      window.location.href = `${process.env.ROOT_URL}/login`;
+      window.location.href = `${process.env.ROOT_URL || `https://sheet.rocks/apps/${process.env.WORKBOOK_ID}`}/login`;
       return;
     }
 
@@ -66,7 +66,7 @@ export class App extends Component<AppProps, AppState> {
 
     if(!(res.data && res.data.success)) {
       // if authentication fails, redirect to the login page
-      window.location.href = `${process.env.ROOT_URL}/login`;
+      window.location.href = `${process.env.ROOT_URL || `https://sheet.rocks/apps/${process.env.WORKBOOK_ID}`}/login`;
       return;
     }
 

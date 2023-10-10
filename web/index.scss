@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+// import roboto font
+// roboto font is imported from google fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
 $primary: #9E8876;
 
@@ -8,11 +10,10 @@ body {
 
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-  font-family: 'Irish Grover', cursive;
   font-size: 3rem;
   text-align: center;
 }

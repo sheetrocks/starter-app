@@ -15,20 +15,16 @@ export async function IsAuthorized(user :User) {
     if(user.email === "") {
         return {success: false, message: AccessError.NO_USER};
     }
-    let url = `https://sheet.rocks/api/v1/workbook/${workbookID}/sheet/${userSheetID}/cells?range=A2:A`;
-    let res = await axios.get(url, {validateStatus: () => true});
+    
+    let url = `https://sheet.rocks/api/v1/workbook/${workbookID}/sheet/${userSheetID}/db/findone`;
+    let res = await axios.get(url, {data: {MatchFormula: `LOWER(COL[A]) = LOWER("${user.email}")`}, validateStatus: () => true});
 
     if(res.status !== 200) {
         console.log(res);
         return {success: false, message: AccessError.SYSTEM_ERROR}
     }
 
-    const validUserDict = {};
-    res.data.forEach((row) => {
-        validUserDict[row[0].toLowerCase()] = true;
-    });
-
-    let exists = validUserDict[user.email.toLowerCase()];
+    let exists = res.data.length > 0;
 
     if(!exists) {
         let url = `https://sheet.rocks/api/v1/workbook/${workbookID}/sheet/${userSheetID}/append`;
