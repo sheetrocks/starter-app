@@ -12,7 +12,7 @@ wget https://github.com/sheetrocks/starter-app/archive/refs/heads/main.zip && un
 ```
 2. Rename the folder to your desired project
 ```bash
-mv start-app-main myapp
+mv starter-app-main myapp && cd myapp
 ```
 3. Go to https://sheet.rocks/home, and start a new blank workbook.
 4. Rename the first tab to "Users". Enter "email" in cell A1 and "name" in cell B1. 
