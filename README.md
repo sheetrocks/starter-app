@@ -14,16 +14,16 @@ wget https://github.com/sheetrocks/starter-app/archive/refs/heads/main.zip && un
 ```bash
 mv starter-app-main myapp && cd myapp
 ```
-3. Go to https://sheet.rocks/home, and start a new blank workbook.
-4. Rename the first tab to "Users". Enter "email" in cell A1 and "name" in cell B1. 
-5. Make a new .env file in the root of the project directory. You'll also need an env.ts file with the same information (this is due to a quirk in how the build tool, Parcel, works).
+3. Make a new .env file in the root of the project directory. You'll also need an env.ts file with the same information (this is due to a quirk in how the build tool, Parcel, works).
 ```bash
 mv .example.env .env && mv api/example.env.ts api/env.ts
 ```
-6. Get the API Key, Workbook ID, User Sheet ID, and Root URL (optional) from the workbook (video instructions [here](https://www.loom.com/share/5ba840b300184759a71a4f4b55f54eaa)).
+4. Now you'll need to enter the correct environment variables in the files you just created. Visit [SheetRocks](https://sheet.rocks/home) and create a new workbook. Then, get the API Key, Workbook ID, User Sheet ID, and Root URL (optional) from the workbook using the video instructions [here](https://www.loom.com/share/5ba840b300184759a71a4f4b55f54eaa).
 
-7. Build and deploy the project
+5. Build and deploy the project
 ```bash
 node build && npm run deploy.js
 ```
-8. Visit `https://sheet.rocks/apps/{your workbook ID}/index.html`, you should should be redirected to your login page. After you log in, you'll see the text "Congratulations! You've gotten started with SheetRocks." If you used a custom domain, go to `https://yourdomain.com` to view your new app. Note that, even for custom domains, the SheetRocks platform handles TLS (https) security.
+
+That's it! Your project should now be live at `https://sheet.rocks/apps/{your workbook ID}/index.html` or, if you used a custom domain, `https://yourdomain.com`.
+
