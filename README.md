@@ -20,6 +20,10 @@ mv .example.env .env && mv api/example.env.ts api/env.ts
 ```
 4. Now you'll need to enter the correct environment variables in the files you just created. Visit [SheetRocks](https://sheet.rocks/home) and create a new workbook. Then, get the API Key, Workbook ID, User Sheet ID, and Root URL (optional) from the workbook using the video instructions [here](https://www.loom.com/share/5ba840b300184759a71a4f4b55f54eaa).
 
+5. Install dependencies
+```bash
+npm ci
+```
 5. Build and deploy the project
 ```bash
 node build && npm run deploy.js
