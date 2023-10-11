@@ -26,7 +26,7 @@ npm ci
 ```
 6. Build and deploy the project
 ```bash
-node build && npm run deploy.js
+npm run build && node deploy.js
 ```
 
 That's it! If the deploy was successful, it will shower you with praise and give you the link for your app.

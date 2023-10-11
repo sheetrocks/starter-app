@@ -15,7 +15,10 @@ class Login extends React.Component<LoginProps, LoginState> {
         super(props);
 
         // empty query params 
-        let queryParams = new URLSearchParams('?primaryColor=B48673&returnTo=https%3A%2F%2Flocal-sisyphus.com:8081');
+        let returnTo = encodeURIComponent(process.env.ROOT_URL || `https://sheet.rocks/apps/${process.env.WORKBOOK_ID}/index.html`);
+
+        // you can theme the login component by setting the primaryColor query param, a 6 digit hex color code
+        let queryParams = new URLSearchParams(`?primaryColor=B48673&returnTo=${returnTo}`);
         let incomingQueryParams = new URLSearchParams(window.location.search);
 
         // for each value in incomingQueryParams, set the value in queryParams
