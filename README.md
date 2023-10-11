@@ -24,7 +24,7 @@ mv .example.env .env && mv api/example.env.ts api/env.ts
 ```bash
 npm ci
 ```
-5. Build and deploy the project
+6. Build and deploy the project
 ```bash
 node build && npm run deploy.js
 ```
