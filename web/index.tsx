@@ -78,7 +78,8 @@ export class App extends Component<AppProps, AppState> {
   render() {
     return (
       <div className="starter-app">
-        <h1>SheetRocks Starter App</h1>
+        <h1>Success!</h1>
+        <h2>You have built and deployed your first SheetRocks App!</h2>
       </div>
     );
   }
