@@ -8,8 +8,10 @@ dotenv.config();
 const workbookID = process.env.WORKBOOK_ID;
 const API_KEY = process.env.API_KEY;
 
-axios.defaults.baseURL = "http://sheet.rocks/api/v1";
+axios.defaults.baseURL = "https://sheet.rocks/api/v1";
 axios.defaults.headers.common['Authorization'] = `Bearer ${API_KEY}`;
+
+let containsIndex = false;
 
 async function uploadFiles(workbookId) {
   try {
@@ -25,6 +27,10 @@ async function uploadFiles(workbookId) {
         // if file ends with.map, skip it
        if (file.endsWith('.map')) {
             return;
+        }
+
+        if (file === 'index.html') {
+            containsIndex = true;
         }
 
       const filePath = path.join(folderPath, file);
@@ -187,6 +193,14 @@ async function deploy() {
     await uploadFiles(workbookID);
     await uploadWebhooks(workbookID);
     await uploadAutomations(workbookID);
+
+    if(containsIndex) {
+      if(process.env.ROOT_URL) {
+        console.log(`Success! Your app is live at ${process.env.ROOT_URL}`);
+      } else {
+        console.log(`Success! Your app is live at https://sheet.rocks/apps/${workbookID}/index.html`);
+      }
+    }
 };
 
 deploy();

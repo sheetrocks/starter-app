@@ -25,5 +25,5 @@ mv .example.env .env && mv api/example.env.ts api/env.ts
 node build && npm run deploy.js
 ```
 
-That's it! Your project should now be live at `https://sheet.rocks/apps/{your workbook ID}/index.html` or, if you used a custom domain, `https://yourdomain.com`.
+That's it! If the deploy was successful, it will shower you with praise and give you the link for your app.
 
