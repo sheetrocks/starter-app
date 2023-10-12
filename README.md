@@ -19,6 +19,9 @@ mv starter-app-main myapp && cd myapp
 mv .example.env .env && mv api/example.env.ts api/env.ts
 ```
 4. Now you'll need to enter the correct environment variables in the files you just created. Visit [SheetRocks](https://sheet.rocks/home) and create a new workbook. Then, get the API Key, Workbook ID, User Sheet ID, and Root URL (optional) from the workbook using the video instructions [here](https://www.loom.com/share/5ba840b300184759a71a4f4b55f54eaa).
+```
+sed -i -e 's/{SHEETROCKS_API_KEY}/(Your API Key)/' -e 's/{WORKBOOK_ID}/(Your Workbook ID)/' -e 's/{USER_SHEET_ID}/(Your User Sheet ID)/' -e 's/{CUSTOM_DOMAIN}/(Your Custom Domain)/' .env api/env.ts
+```
 
 5. Install dependencies
 ```bash

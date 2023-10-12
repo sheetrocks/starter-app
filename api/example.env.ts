@@ -1,7 +1,7 @@
 // export these environment variables as a json object
-let API_KEY = 'your sheetrocks API Key';
-let WORKBOOK_ID = 'The ID of the SheetRocks backend';
-let USER_SHEET_ID = 'The ID of the sheet with the user data';
+let API_KEY = '{SHEETROCKS_API_KEY}';
+let WORKBOOK_ID = '{WORKBOOK_ID}';
+let USER_SHEET_ID = '{USER_SHEET_ID}';
 
 export default {
     API_KEY,
